@@ -31,19 +31,23 @@ const MovieDetailsPage = () => {
       <Link to={goBackRef.current} className={css.backBtn}>
         Go Back
       </Link>
+       
       <div className={css.movieBox}>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          className={css.poster}
-        />
+        {movie.poster_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={`${movie.title} Poster`}
+            className={css.poster}
+          />
+        ) : (
+          <div className={css.noPosterPlaceholder}>No Image</div>
+        )}
         <div className={css.mainInfo}>
-          <h2 className={css.title}>{`${
-            movie.title
-          } (${movie.release_date.slice(0, 4)})`}</h2>
-
+          <h2 className={css.title}>
+            {`${movie.title} (${movie.release_date.slice(0, 4)})`}
+          </h2>
           <h3 className={css.overview}>Overview</h3>
           <p className={css.overview}>{movie.overview}</p>
-
           <h3 className={css.genre}>Genres</h3>
           <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
         </div>
