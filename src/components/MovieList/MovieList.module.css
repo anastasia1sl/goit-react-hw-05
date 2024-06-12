@@ -4,6 +4,7 @@
 
 .movieList {
   text-decoration: none;
+  list-style: none;
 }
 .movieItem {
   font-size: 15px;
