@@ -1,0 +1,14 @@
+.moviesBox {
+  padding-left: 20px;
+}
+
+.movieList {
+  text-decoration: none;
+}
+.movieItem {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 5px;
+
+  text-decoration: none;
+}
